@@ -75,4 +75,3 @@ For instance, code completion for Camel JAVA.
 ```
 Enjoy!
 Completion of Camel URI in Sublime.
-
