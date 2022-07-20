@@ -73,5 +73,4 @@ For instance, code completion for Camel JAVA.
 		"enabled": true,
 }
 ```
-Enjoy!
-Completion of Camel URI in Sublime.
+Enjoy the Completion of Camel URI in Sublime.
