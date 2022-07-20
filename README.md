@@ -25,7 +25,7 @@ For instance, code completion for Camel JAVA.
 
 ## Configure LSP plugin for Camel
 
-- Download Camel LSP server jar from (https://jar-download.com/artifacts/com.github.camel-tooling/camel-lsp-server/1.0.0/source-code)
+- Download Camel LSP server jar from (https://jar-download.com/artifacts/com.github.camel-tooling/camel-lsp-server/1.6.0/source-code)
 - Preferences: Package Setting -> LSP Settings
 - fill with updated path to the camel-lsp-server jar
 ```json
@@ -39,7 +39,7 @@ For instance, code completion for Camel JAVA.
 			[
 				"java",
 				"-jar",
-				"PATH/TO/camel-lsp-server-1.1.0.jar"
+				"PATH/TO/camel-lsp-server-1.6.0.jar"
 			],
 			"enabled": true,
 			"languages": [
@@ -64,7 +64,7 @@ For instance, code completion for Camel JAVA.
 	"ignored_packages":["Vintage"]
 }
 ```
-## Inside LSP-jdtls.sublime-settings for JAVA.
+## Inside LSP-jdtls.sublime-settings for Java.
 - Tools -> Command palette... -> Prefernces:LSP-jdtls settings
 - Tools -> LSP:Enable package server jdtls both Globally and in Project.
 ```
@@ -73,7 +73,6 @@ For instance, code completion for Camel JAVA.
 		"enabled": true,
 }
 ```
-
 Enjoy!
 Completion of Camel URI in Sublime.
 
