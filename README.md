@@ -4,20 +4,33 @@ The idea is to leverage the [Sublime LSP package](https://github.com/tomv564/LSP
 
 ## Download Sublime
 
-Download from [SublimeText 3 page](https://www.sublimetext.com/3)
+Download from [SublimeText 4 page](https://www.sublimetext.com/download)
+
+# Camel Language Server Support Demo for XML
+
+For instance, code completion for Camel XML.
+
+![Demo](images/xmlsublime.gif)
+
+# Camel Language Server Support Demo for JAVA
+
+For instance, code completion for Camel JAVA.
+![Demo](images/javasublime.gif)
+
 
 ## Install LSP plugin
 
-- Tools -> Command palette... -> Install package control...
+- Tools -> Command palette... -> Package Control: Install Package
 - Tools -> Command palette... -> Install LSP
 
 ## Configure LSP plugin for Camel
 
-- Download Camel LSP server jar from [Sonatype Maven repository](https://oss.sonatype.org/content/repositories/snapshots/com/github/camel-tooling/camel-lsp-server/1.1.0-SNAPSHOT/)
-- Tools -> Command palette... -> Preferences: LSP Setting
+- Download Camel LSP server jar from (https://jar-download.com/artifacts/com.github.camel-tooling/camel-lsp-server/1.0.0/source-code)
+- Preferences: Package Setting -> LSP Settings
 - fill with updated path to the camel-lsp-server jar
 ```json
 {
+
 	"clients":
 	{
 		"Camel":
@@ -26,26 +39,41 @@ Download from [SublimeText 3 page](https://www.sublimetext.com/3)
 			[
 				"java",
 				"-jar",
-				"PATH/TO/camel-lsp-server-1.1.0-SNAPSHOT.jar"
+				"PATH/TO/camel-lsp-server-1.1.0.jar"
 			],
 			"enabled": true,
-			"languageId": "camel",
-			"scopes":
-			[
-				"text.xml"
+			"languages": [
+				{
+					"selector": "text.xml",
+					"priority_selector": "text.xml",
+				},
+				{
+					"selector": "source.java",
+					"priority_selector": "source.java",
+				}
 			],
-			"syntaxes":
-			[
-				"Packages/XML/XML.sublime-syntax"
-			]
-		}
-	}
+		},
+	},
+}
+```
+## Inside LSP-lemminx.sublime-settings for XML.
+- Tools -> Command palette... -> Prefernces:LSP-lemminx settings
+- Tools -> LSP:Enable package server lemminx both Globally and in Project.
+```
+{
+	"ignored_packages":["Vintage"]
+}
+```
+## Inside LSP-jdtls.sublime-settings for JAVA.
+- Tools -> Command palette... -> Prefernces:LSP-jdtls settings
+- Tools -> LSP:Enable package server jdtls both Globally and in Project.
+```
+{
+		"version": "1.12.0-202206011637",
+		"enabled": true,
 }
 ```
 
 Enjoy!
-![Completion of Camel URI in Sublime](sublimeCompletion.png "Completion of Camel URI in Sublime")
+Completion of Camel URI in Sublime.
 
-## Current limitations
-
-Please note that the support seems quite limited currently (for instance completion is working only at the beginning of Camel URI). Please open issues for spotted issues and missing features.
